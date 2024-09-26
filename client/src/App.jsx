@@ -78,7 +78,7 @@ function App() {
   const findTodo = (id, parentId) => {
     let todoListLocal = todoList;
     let parent = null;
-    if (parentId) {
+    if (parentId && parentId !== TOP_LEVEL) {
       parent = todoList.find(todo => todo.id === parentId);
       todoListLocal = parent?.subtasks;
     }
