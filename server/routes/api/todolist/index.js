@@ -21,10 +21,6 @@ router.post('/', async (req, res) => {
         todoList = [];
     }
 
-    if (!Array.isArray(todoList)) {
-        todoList = [];
-    }
-
     const { nanoid } = await import('nanoid');
     
     const data = req.body;
@@ -38,11 +34,8 @@ router.post('/', async (req, res) => {
 router.put('/', async (req, res) => {
     const todoList = await readJsonFile(dbFilePath);
     const data = req.body;
-    console.log(data);
     const idx = todoList.findIndex(todo => todo.id === data.id);
-    console.log(idx);
     todoList[idx] = data;
-    console.log(todoList);
     await writeJsonFile(dbFilePath, todoList);
     res.json(data);
 }); 

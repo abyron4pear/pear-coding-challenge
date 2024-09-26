@@ -16,7 +16,6 @@ function App() {
 
   const fetchTodoList = async () => {
     const response = await getTodoList();
-    console.log(response);
     setTodoList(response);
   }
 

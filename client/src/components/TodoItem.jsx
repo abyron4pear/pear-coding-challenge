@@ -9,7 +9,6 @@ function TodoItem({ todo, onToggleComplete, parentId, onAddSubTodo }) {
     };
 
     const handleAddSubTodo = (newTodo) => {
-        console.log("called handleAddSubTodo", newTodo);
         onAddSubTodo(newTodo, todo.id);
     }
 
