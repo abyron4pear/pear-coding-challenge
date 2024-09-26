@@ -27,7 +27,7 @@ function TodoItem({ todo, onToggleComplete, parentId, onAddSubTodo }) {
                     style={{ marginRight: '10px' }}
                     disabled={todo?.subtasks?.length > 0}
                 />
-                <span class={priority ? 'priority-item' : ''} style={{ 
+                <span className={priority ? 'priority-item' : ''} style={{ 
                     textDecoration: todo.completed ? 'line-through' : 'none',
                     color: todo.completed ? '#888' : '#fff'
                 }}>
