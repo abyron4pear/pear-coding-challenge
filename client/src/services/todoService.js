@@ -1,12 +1,13 @@
 import apiService from "./index.js";
 import { Task } from "../models/index.js";
+import { sortTodos } from "../utils/index.js";
 
 export const getTodoList = async () => {
     const response = await apiService.get("/todo");
     const tasks = response.data || [];
     return tasks.map(t => {
         return new Task().loadFromJSON(t);
-    });
+    }).sort(sortTodos);
 }
 
 export const addTodo = async (newTodo) => {

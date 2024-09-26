@@ -8,6 +8,7 @@ const routes = require('./server/routes');
 app.use(express.static(path.join(__dirname, './client/dist')));
 
 // api routes
+app.use(express.json());
 app.use(routes);
 
 // serve client routes as fall back

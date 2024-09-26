@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888;
 }
+
+.priority-item {
+  border-bottom: 2px solid red;
+  font-weight: bold;
+}
+
+.priority-item::after {
+  content: " !!!";
+  color: red;
+}
